@@ -5,14 +5,15 @@
 {% block title %}{{ issue.summary }}{% endblock title%}
 
 {% block content%}
-<h1>{{ issue.summary }}</h1>
-<h3>{{ issue.status }}</h3>
+<h1>Summary: {{ issue.summary }}</h1>
+<h4>Reporter: {{ issue.reporter }}</h4>
+<h5>Status: {{ issue.status }}</h5>
 <small>Created on: {{ issue.created_on }}</small>
 <p>{{ issue.description }}</p>
 
 {% if user.is_authenticated %}
 {% if user == issue.reporter %}
-<a class="btn btn-danger" href="{% url 'delete' post.id %}">Delete</a>
+
 {% endif %}
 {% endif %}
 

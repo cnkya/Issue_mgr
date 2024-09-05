@@ -7,21 +7,26 @@ from django.views.generic import (
 )
 from .models import Issue, Status
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    
+)
 
-class IssueListView(ListView):    #scan operation
+class IssueListView(LoginRequiredMixin, ListView):    #scan operation
     template_name = "issues/list.html"
     model = Issue
 
-class IssueDetailView(DetailView):
+class IssueDetailView(LoginRequiredMixin, DetailView):
     template_name = "issues/detail.html"
     model = Issue
 
-class IssueCreateView(CreateView):
+class IssueCreateView(LoginRequiredMixin, CreateView):
     template_name = "issues/new.html"
     model = Issue
     fields = ["summary", "status", "description", "reporter"  ]
 
-class IssueUpdateView(UpdateView):
+class IssueUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "issues/update.html"
     model = Issue
     fields = ["summary", "status", "priority", "description", "reporter", "user" ]
