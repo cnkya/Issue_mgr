@@ -30,6 +30,7 @@
                 <a class="nav-link" href="{% url 'new' %}">Create issue</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'password_change' %}">Change Password</a>
                 <form method="POST" action="{% url 'logout' %}">
                     <input type="submit" class="nav-link active" value="Log Out">
                     {% csrf_token %}
