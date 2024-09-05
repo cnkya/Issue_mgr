@@ -19,7 +19,7 @@ class IssueDetailView(DetailView):
 class IssueCreateView(CreateView):
     template_name = "issues/new.html"
     model = Issue
-    fields = ["summary", "status", "priority", "description", "reporter", "user" ]
+    fields = ["summary", "status", "description", "reporter"  ]
 
 class IssueUpdateView(UpdateView):
     template_name = "issues/update.html"
