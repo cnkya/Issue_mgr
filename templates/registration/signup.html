@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 
 
-{% block title %}Log In{% endblock title %}
+{% block title %}Create Account{% endblock title %}
 
 {% block content %}
-<h1>Sign Up</h1>
+<h1>Create Account</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form|crispy }}

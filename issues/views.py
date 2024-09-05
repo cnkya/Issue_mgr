@@ -18,6 +18,7 @@ class IssueListView(LoginRequiredMixin, ListView):    #scan operation
     model = Issue
 
     
+    
 
 class IssueDetailView(LoginRequiredMixin, DetailView):
     template_name = "issues/detail.html"
